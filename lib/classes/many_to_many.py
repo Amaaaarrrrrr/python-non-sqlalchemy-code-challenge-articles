@@ -21,7 +21,7 @@ class Article:
         self.author._magazines.add(self.magazine)
         self.author._articles.append(self)
 
-    @property
+    @property #getter for title
     def title(self):
         return self._title
     
@@ -90,6 +90,7 @@ class Magazine:
         self.category = category
         self._articles =[]
         self._authors=set()
+        
 
     @property #getter method for magazine's name
     def name(self):
@@ -97,7 +98,7 @@ class Magazine:
     
     @name.setter #setter method
     def name (self,name):
-        if isinstance(name , str) and 2 < len(name) < 16:
+        if isinstance(name , str) and 2 <= len(name) <= 16:
             self._name =name
         else:
             raise Exception ("Magazine's name should be between 2-16 characters")
@@ -119,7 +120,7 @@ class Magazine:
     pass
 
     def contributors(self): #returns a unique list of authors who have written for this magazine
-        return list(self._contributors)
+        return list(self._authors)
     pass
 
     def article_titles(self):
