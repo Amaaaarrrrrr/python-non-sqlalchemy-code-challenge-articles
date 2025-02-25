@@ -78,6 +78,12 @@ class Author:
         return list(set(magazine.category for magazine in self._magazines))  #returns a unique list
     pass
 
+    def __repr__(self):
+        # Return a string representation of the author
+        return f"Author({self.name})"
+    pass
+
+
 class Magazine:
     def __init__(self, name, category):
         self.name = name
